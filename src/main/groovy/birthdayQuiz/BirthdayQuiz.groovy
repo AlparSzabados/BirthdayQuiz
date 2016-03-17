@@ -2,7 +2,7 @@ package birthdayQuiz
 
 import java.awt.Desktop
 
-class birthdayQuiz {
+class BirthdayQuiz {
     public static void main(String[] args) {
 
         // Transforms a list of Strings into dates
