@@ -3,13 +3,12 @@ package birthdayQuiz
 import static birthdayQuiz.DateCheck.*
 import static birthdayQuiz.FileCounter.*
 import static UrlHolder.*
+import static birthdayQuiz.FolderHolder.*
 import static birthdayQuiz.OpenUrl.*
 import static birthdayQuiz.PlayerInput.*
 
 class BirthdayQuiz {
     static void main(String... args) {
-        File folder = new File("C:\\NewFolder")
-
 
         /* First exercise */
         if (isExerciseAllowed(1)) {
