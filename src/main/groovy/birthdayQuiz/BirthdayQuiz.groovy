@@ -5,6 +5,7 @@ import static birthdayQuiz.FolderHolder.*
 import static birthdayQuiz.FileCounter.*
 import static birthdayQuiz.PlayerInput.*
 import static birthdayQuiz.DateCheck.*
+import static birthdayQuiz.TextHolder.*
 import static birthdayQuiz.XmlChange.*
 import static birthdayQuiz.XmlMaker.*
 import static birthdayQuiz.OpenUrl.*
@@ -19,19 +20,19 @@ class BirthdayQuiz {
         }
 
         /* First exercise */
-        if (isExerciseAllowed(1)) {
-            if (isExerciseFinished(1)) {
-                /* Do something */
-            } else {
-                /* Give exercise */
-                openUrl exercise1
-                if (fileCount(folder, 'jpg') == 30) {
-
-                    openUrl win1
-
-                    finishExercise(1)
+        switch (isExerciseAllowed(1)) {
+            case false: println task1
+                switch (isExerciseFinished(1)) {
+                    case true: println finishedMessage
+                    case false: println firstTask
+                                openUrl win1
+                                openUrl exercise1;
                 }
-            }
+        }
+
+        if (fileCount(folder, 'jpg') == 30) {
+            finishExercise(1);
+            println finishedMessage
         }
 
         /* Second exercise */
