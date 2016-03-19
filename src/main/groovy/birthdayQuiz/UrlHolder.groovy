@@ -1,6 +1,7 @@
 package birthdayQuiz
 
 class UrlHolder {
+    /* TODO Change the links! */
     static Object win1 = "http://giphy.com/gifs/applause-clapping-clap-aLdiZJmmx4OVW"
     static Object win2 = "http://giphy.com/gifs/applause-clapping-clap-aLdiZJmmx4OVW"
     static Object win3 = "http://giphy.com/gifs/applause-clapping-clap-aLdiZJmmx4OVW"
