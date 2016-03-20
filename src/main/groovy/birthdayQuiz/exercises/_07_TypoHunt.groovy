@@ -1,19 +1,25 @@
 package birthdayQuiz.exercises
 
-import birthdayQuiz.TextHolder
-
-import static birthdayQuiz.PlayerInput.playerInput
+import static birthdayQuiz.OpenUrl.openUrl
+import static birthdayQuiz.PlayerInput.readUppercase
+import static birthdayQuiz.TextHolder.*
 
 class _07_TypoHunt {
-    static typoHunt(List typos) {
+    static final typos = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+    
+    static String description = ''
+    static Closure<Boolean> run = {
         for (i in typos.indices) {
             println "Type word Nr. ${i + 1}"
-            println TextHolder.pressEnter
-            if (playerInput().toUpperCase().trim() == typos[i].toUpperCase().trim) {
-                println TextHolder.finishedMessage
+            println pressEnter
+            if (readUppercase() == typos[i].toUpperCase()) {
+                println FINISHED_MESSAGE
             } else {
-                println TextHolder.noppe
+                println noppe
             }
         }
+
+        openUrl win2Gif
+        openUrl task07Link
     }
 }
