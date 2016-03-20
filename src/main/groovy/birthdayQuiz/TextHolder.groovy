@@ -1,10 +1,5 @@
 package birthdayQuiz
 
-import com.sun.org.apache.xpath.internal.operations.String
-
-import static birthdayQuiz.FileCounter.fileCount
-import static birthdayQuiz.FolderHolder.getFolder
-
 class TextHolder {
     static task1 = ''
     static task2 = ''
@@ -20,7 +15,7 @@ class TextHolder {
 
     static finishedMessage = 'Check!'
     static failMessage = 'Try again!'
-    static pictureCounter = "You have uploaded %s pictures."
+    static pictureCounter = 'You have uploaded %s pictures.'
     static pressEnter = "Press 'Enter' when ready."
 
     static typos = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']

@@ -2,8 +2,8 @@ package birthdayQuiz
 
 import groovy.xml.MarkupBuilder
 
-import static birthdayQuiz.FolderHolder.*
-import static XmlMaker.Status.*
+import static birthdayQuiz.FolderHolder.getChecker
+import static birthdayQuiz.XmlMaker.Status.NOT_FINISHED
 
 class XmlMaker {
     enum Status {
@@ -12,7 +12,7 @@ class XmlMaker {
 
     static createXml() {
         def sw = new StringWriter()
-        def xml = new MarkupBuilder(sw).birthdayQuiz() {
+        new MarkupBuilder(sw).birthdayQuiz() {
             exercises() {
                 exercise1(NOT_FINISHED)
                 exercise2(NOT_FINISHED)
@@ -26,9 +26,8 @@ class XmlMaker {
                 exercise10(NOT_FINISHED)
                 exercise11(NOT_FINISHED)
             }
-            sw.write()
-            checker << sw
-            checker << ' </birthdayQuiz>' //TODO findout why it's not closing...
         }
+        sw.write()
+        checker << sw
     }
 }
