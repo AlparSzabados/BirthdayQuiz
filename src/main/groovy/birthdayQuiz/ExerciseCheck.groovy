@@ -1,6 +1,6 @@
 package birthdayQuiz
 
-import static birthdayQuiz.XmlMaker.Status.*
+import static birthdayQuiz.XmlMaker.Status.FINISHED
 import static birthdayQuiz.XmlReader.EXERCISE_DONE
 
 class ExerciseCheck {

@@ -1,6 +1,6 @@
 package birthdayQuiz
 
 class FolderHolder {
-    static File folder = new File("C:\\Birthday Quiz")
-    static File checker = new File(folder, "Checker.xml")
+    static folder = new File('C:/BirthdayQuiz')
+    static checker = new File(folder, 'Checker.xml')
 }
