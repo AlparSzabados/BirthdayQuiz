@@ -2,8 +2,10 @@ package birthdayQuiz
 
 import birthdayQuiz.exercises.ExerciseRegistry
 
+import static birthdayQuiz.FolderHolder.CONFIG
 import static birthdayQuiz.XmlMaker.Status.FINISHED
 import static birthdayQuiz.XmlReader.EXERCISE_DONE
+import static birthdayQuiz.XmlReader.config
 
 class ExerciseCheck {
     static isExerciseFinished(ExerciseRegistry ex) {
@@ -12,6 +14,6 @@ class ExerciseCheck {
 
     static finishExercise(ExerciseRegistry ex) {
         EXERCISE_DONE[ex] = FINISHED
-        /* TODO make it write it into the XML file */
+        config.writeTo(CONFIG)
     }
 }
