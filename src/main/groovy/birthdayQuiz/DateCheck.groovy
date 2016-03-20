@@ -1,23 +1,27 @@
 package birthdayQuiz
 
-import java.time.Month
+import birthdayQuiz.exercises.ExerciseRegistry
+
 import java.time.MonthDay
 
-class DateCheck {
-    static ALLOWED_DATES = [1 : MonthDay.of(Month.MARCH, 24),
-                            2 : MonthDay.of(Month.MARCH, 29),
-                            3 : MonthDay.of(Month.APRIL, 1),
-                            4 : MonthDay.of(Month.APRIL, 6),
-                            5 : MonthDay.of(Month.APRIL, 11),
-                            6 : MonthDay.of(Month.APRIL, 15),
-                            7 : MonthDay.of(Month.APRIL, 22),
-                            8 : MonthDay.of(Month.APRIL, 26),
-                            9 : MonthDay.of(Month.MAY, 2),
-                            10: MonthDay.of(Month.MAY, 6),
-                            11: MonthDay.of(Month.MAY, 11)]
+import static birthdayQuiz.exercises.ExerciseRegistry.*
+import static java.time.Month.*
 
-    static isExerciseAllowed(int id) {
-        def startDate = ALLOWED_DATES[id]
-        startDate && (MonthDay.now() >= startDate)
+class DateCheck {
+    static ALLOWED_DATES = [(_01): MonthDay.of(MARCH, 24),
+                            (_02): MonthDay.of(MARCH, 29),
+                            (_03): MonthDay.of(APRIL, 1),
+                            (_04): MonthDay.of(APRIL, 6),
+                            (_05): MonthDay.of(APRIL, 11),
+                            (_06): MonthDay.of(APRIL, 15),
+                            (_07): MonthDay.of(APRIL, 22),
+                            (_08): MonthDay.of(APRIL, 26),
+                            (_09): MonthDay.of(MAY, 2),
+                            (_10): MonthDay.of(MAY, 6),
+                            (_11): MonthDay.of(MAY, 11)]
+
+    static isExerciseAllowed(ExerciseRegistry ex) {
+        def startDate = ALLOWED_DATES[ex]
+        MonthDay.now() >= startDate
     }
 }

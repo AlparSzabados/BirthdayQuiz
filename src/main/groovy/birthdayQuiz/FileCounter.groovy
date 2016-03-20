@@ -1,9 +1,10 @@
 package birthdayQuiz
 
 class FileCounter {
-    static fileCount(File folder, String extension) {
+    static fileCount(File folder, String prefix, String extension) {
         folder.listFiles().count { file ->
-            file.name.endsWith(extension)
+            def name = file.name
+            name.startsWith(prefix) && name.endsWith(extension)
         }
     }
 }

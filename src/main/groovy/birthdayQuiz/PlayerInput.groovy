@@ -1,7 +1,8 @@
 package birthdayQuiz
 
 class PlayerInput {
-    static playerInput() {
-        System.in.newReader().readLine()
+    static readUppercase() {
+        def input = System.in.newReader().readLine()
+        input.toUpperCase().trim()
     }
 }
