@@ -1,5 +1,7 @@
 package birthdayQuiz
 
+import com.sun.org.apache.xpath.internal.operations.String
+
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.getFolder
 
@@ -16,7 +18,13 @@ class TextHolder {
     static task10 = ''
     static task11 = ''
 
-    static finishedMessage = 'Kipipálva!'
-    static failMessage = 'Ez nem sikerült, probald meg újra.'
-    static firstTask = "${fileCount(folder, 'jpg')} képet töltöttél fel eddíg"
+    static finishedMessage = 'Check!'
+    static failMessage = 'Try again!'
+    static pictureCounter = "You have uploaded %s pictures."
+    static pressEnter = "Press 'Enter' when ready."
+
+    static typos = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+    static noppe = 'Noppe :P'
+
+    static code = 'apple'
 }
