@@ -8,7 +8,8 @@ import static birthdayQuiz.UrlHolder.*
 class _02_DecipherText {
     static String description = '''2. Generály értelmes, Magyar nyelvű beszédet a Toldd a betűt.pdf szövegéből,
 a megfejtést .docx-ben írd meg és végül mentsd le a BirthdayQuiz folderbe.
-Ha halványlila gőzöd sincs, hogy mi a megfejtés, kérjél segítséget Bálint Rékától!\n'''
+Ha halványlila gőzöd sincs, hogy mi a megfejtés, kérjél segítséget Bálint Rékától!
+'''
 
     static Closure<Boolean> run = {
         def success = (fileCount(ROOT_FOLDER, 'Ex02', 'docx') == 1)
