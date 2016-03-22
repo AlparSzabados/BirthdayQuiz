@@ -7,7 +7,8 @@ import static birthdayQuiz.UrlHolder.*
 
 class _06_Puzzle {
     static String description = '''6. Ha beírod a Panek Kati által megadott kódot, akkor meg kapod az utasítást a következő feladatra.
-Tedd, amit látni fogsz. De előbb a kódot docx-ben mentsd le a Birtyday Quiz Folderbe!\n'''
+Tedd, amit látni fogsz. De előbb a kódot docx-ben mentsd le a Birtyday Quiz Folderbe!
+'''
 
     static Closure<Boolean> run = {
         def success = (fileCount(ROOT_FOLDER, 'Ex06', '.docx') == 1)
@@ -16,7 +17,7 @@ Tedd, amit látni fogsz. De előbb a kódot docx-ben mentsd le a Birtyday Quiz F
             openUrl taskLinks[5]
         } else {
             sleep(10000)
-            println 'No files found, have a GIF-t.'
+            println 'No files found, have a GIF-t.' // TODO gift?
             openUrl loses[0]
         }
         success

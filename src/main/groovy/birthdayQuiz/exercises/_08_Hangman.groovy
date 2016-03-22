@@ -7,7 +7,8 @@ import static birthdayQuiz.UrlHolder.*
 
 class _08_Hangman {
     static String description = '''8. Egy tapintatos professzionális férj 3 év alatt már kitalálja hogy hogyan kell szólítsák egymást a feleségével!
-Ha nem, akkor ő lesz az akasztott ember…\n'''
+Ha nem, akkor ő lesz az akasztott ember…
+'''
 
     static Closure<Boolean> run = {
         def words = ['kincsifincs', 'husbandi & halfszkaj', 'kicsi kaka liliomszal']
@@ -58,10 +59,8 @@ Ha nem, akkor ő lesz az akasztott ember…\n'''
         for (i in wordIn.indices) {
             if (letter == wordIn[i]) {
                 wordOut[i] = letter
-                wordNew = wordOut
-            } else {
-                wordNew = wordOut
             }
+            wordNew = wordOut
         }
         wordNew
     }

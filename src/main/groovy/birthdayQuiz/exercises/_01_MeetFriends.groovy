@@ -9,7 +9,8 @@ class _01_MeetFriends {
 Mindenik személlyel kell készíts egy képet, ami kettőtöket ábrázolja.
 Töltsd fel a képeket az app melletti Birthday Quiz folderbe.
 Minderre van 49 napod. A képekböl 5 darab a konzi területén kell legyen
-és a konzi jól felismerhető kell legyen a háttérben. \n'''
+és a konzi jól felismerhető kell legyen a háttérben.
+'''
 
     static Closure<Boolean> run = {
         sleep(30000)
