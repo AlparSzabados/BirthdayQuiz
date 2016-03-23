@@ -21,7 +21,7 @@ Kérem a plakátot jpg formátumban és akkor megtudod végre, hogy hol és miko
             openUrl pickRandom(wins)
             openUrl taskLinks[10]
         } else {
-            println 'Nem töltötted fel a kért dokumentumot.'
+            println 'Nem töltötted fel a kért képet.'
             openUrl pickRandom(loses)
         }
         success

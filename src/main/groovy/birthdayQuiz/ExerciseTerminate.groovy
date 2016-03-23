@@ -8,11 +8,6 @@ import static birthdayQuiz.exercises.ExerciseRegistry.*
 import static groovy.xml.XmlUtil.serialize
 
 class ExerciseTerminate {
-
-    static isExerciseFinished(ExerciseRegistry ex) {
-        EXERCISE_DONE[ex] == FINISHED
-    }
-
     static config = new XmlSlurper().parseText(CONFIG.text)
 
     private static exercises = config.exercises
@@ -28,12 +23,17 @@ class ExerciseTerminate {
                                             (_10): exercises._10,
                                             (_11): exercises._11]
 
+    static isExerciseFinished(ExerciseRegistry ex) {
+        EXERCISE_DONE[ex] == FINISHED
+    }
+
     static finishExercise(ExerciseRegistry ex) {
-        config
-        EXERCISE_DONE.each {
-            config.'**'.findAll { if (it.name() == ex.toString()) it.replaceBody FINISHED }
+        EXERCISE_DONE[ex] = FINISHED
+        
+        config.'**'.each {
+            if (it.name() == ex.toString())
+                it.replaceBody FINISHED
         }
         CONFIG.text = serialize(config)
-        EXERCISE_DONE[ex] = FINISHED
     }
 }
