@@ -22,7 +22,7 @@ Ma van a szüleim 16. házassági évfordulója is. Köszöntsd őket! S juttasd
             openUrl pickRandom(wins)
             openUrl taskLinks[9]
         } else {
-            println 'Nem töltötted fel a kért dokumentumot.'
+            println 'Nem töltötted fel a kért képet.'
             openUrl pickRandom(loses)
         }
         success
