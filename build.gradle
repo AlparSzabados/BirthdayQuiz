@@ -4,15 +4,18 @@ buildscript {
     }
 }
 
-group 'pap.lorinc'
+group 'birthdayQuiz'
 version '1.0.0'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
-
+apply plugin: 'application'
 apply plugin: 'idea'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = 'birthdayQuiz.BirthdayQuiz'
+applicationDefaultJvmArgs = ['-Dfile.encoding=UTF-8'] // TODO not yet working 
 
 repositories {
     mavenCentral()

@@ -7,6 +7,7 @@ import static birthdayQuiz.ExerciseTerminate.finishExercise
 import static birthdayQuiz.ExerciseTerminate.isExerciseFinished
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.PlayerInput.readLowercase
 import static birthdayQuiz.TextHolder.FAILED_MESSAGE
 import static birthdayQuiz.TextHolder.FINISHED_MESSAGE
 
@@ -47,5 +48,7 @@ I wouldn’t mess with them if I were you…
         if (jpgCount == 30) {
             println "Nahát! Mégis vannak barátaid"
         }
+
+        readLowercase()
     }
 }
