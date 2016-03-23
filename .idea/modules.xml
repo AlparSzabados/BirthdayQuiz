@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BirthdayQuiz.iml" filepath="$PROJECT_DIR$/.idea/modules/BirthdayQuiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BirthdayQuiz_main.iml" filepath="$PROJECT_DIR$/.idea/modules/BirthdayQuiz_main.iml" group="BirthdayQuiz" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BirthdayQuiz_test.iml" filepath="$PROJECT_DIR$/.idea/modules/BirthdayQuiz_test.iml" group="BirthdayQuiz" />
     </modules>
   </component>
 </project>
