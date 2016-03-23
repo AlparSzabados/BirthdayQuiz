@@ -9,7 +9,7 @@ import static java.time.Month.APRIL
 
 class _04_HiddenObjects {
     static String description = '''4. András imád takarítani, és ő mindig rendet tart, és nála soha sincs rendetlenség, és ő jó és szép!– Yeah right!
-Mentsd el az állatok bőlcseleteit tartalmazó `.docx`-et a BirthdayQuiz folderbe, s akkor mondom tovább a feladatot!
+Mentsd el az állatok bolcseleteit tartalmazó `.docx`-et a BirthdayQuiz folderbe, s akkor mondom tovább a feladatot!
 '''
 
     static start = MonthDay.of(APRIL, 6)

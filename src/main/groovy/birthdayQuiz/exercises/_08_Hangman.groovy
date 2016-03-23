@@ -18,7 +18,7 @@ Ha nem, akkor ő lesz az akasztott ember…
     static link = 'https://drive.google.com/open?id=0B_z3-GYCanTKYk1nZ2lyckxUcGc'
 
     static Closure<Boolean> run = {
-        def words = ['kincsifincs', 'húsbandi & hálfszkáj', 'kicsi kaka liliomszál']
+        def words = ['kincsifincs', 'husbandi & halfszkaj', 'kicsi kaka liliomszal']
         def wordsRedacted = ['k__________', '___b____ & ________j', '_____ ____ _____m____']
         def playerWordPool = []
 
@@ -33,7 +33,7 @@ Ha nem, akkor ő lesz az akasztott ember…
 
             List<String> container = wordRedactedList
             for (counter in 0..numberOfTries) {
-                println "találatok száma: ${numberOfTries}| eddíg használt betük: ${lettersTried.join(',')}"
+                println "Találatok száma: ${numberOfTries}| eddig használt betük: ${lettersTried.join(',')}"
 
                 def letter = PlayerInput.readLowercase()
                 lettersTried += letter
@@ -53,9 +53,7 @@ Ha nem, akkor ő lesz az akasztott ember…
 
 
         def success = (words == playerWordPool)
-        if (!success) {
-            openUrl pickRandom(loses)
-        }
+        success
     }
 
     static checkLetter(String letter, List<String> wordIn, List<String> wordOut) {

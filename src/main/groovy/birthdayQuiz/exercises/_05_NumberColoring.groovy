@@ -8,7 +8,7 @@ import static birthdayQuiz.PlayerInput.readLowercase
 import static java.time.Month.APRIL
 
 class _05_NumberColoring {
-    static String description = '''5. Gondolkozz el a mai dátumon (Április 11)… Ha lementtetted az első otthonunk karíkázós `.jpg`-jét a BirthdayQuiz folderbe,
+    static String description = '''5. Gondolkozz el a mai dátumon (Április 11)… Ha lementtetted az első otthonunk karíkazos `.jpg`-jét a BirthdayQuiz folderbe,
 akkor megtudod, hova kell menned tovább. Előre haladunk az időben vagy hátra? Hmm…
 '''
 

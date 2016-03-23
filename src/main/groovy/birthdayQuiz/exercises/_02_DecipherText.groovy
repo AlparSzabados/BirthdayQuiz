@@ -8,7 +8,7 @@ import static birthdayQuiz.PlayerInput.readLowercase
 import static java.time.Month.MARCH
 
 class _02_DecipherText {
-    static String description = '''2. Generály értelmes, Magyar nyelvű beszédet a `Toldd a betűt.pdf` szövegéből,
+    static String description = '''2. generaly értelmes, Magyar nyelvű beszédet a `Toldd a betűt.pdf` szövegéből,
 a megfejtést `.docx-ben` írd meg és végül mentsd le a BirthdayQuiz folderbe.
 Ha halványlila gőzöd sincs, hogy mi a megfejtés, kérjél segítséget Bálint Rékától!
 '''

@@ -10,7 +10,7 @@ class _01_MeetFriends {
     static String description = '''1. Első feladatod az lesz, hogy találkozz 30 barátoddal.
 Mindenik személlyel kell készíts egy képet, ami kettőtöket ábrázolja.
 Töltsd fel a képeket az app melletti BirthdayQuiz folderbe.
-Minderre van 49 napod. A képekböl 5 darab a konzi területén kell legyen
+Minderre van 49 napod. A kepekbol 5 darab a konzi területén kell legyen
 és a konzi jól felismerhető kell legyen a háttérben.
 '''
 

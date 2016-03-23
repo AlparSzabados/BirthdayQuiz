@@ -6,12 +6,12 @@ import static birthdayQuiz.PlayerInput.readLowercase
 import static java.time.Month.APRIL
 
 class _07_TypoHunt {
-    static final TYPOS = ['tuléltél', 'többett', 'képekböl', 'generály', 'bőlcseleteit', 'lementtetted', 'karíkázós', 'meg kapod', 'lyó', 'irt']
+    static final TYPOS = ['tuleltel', 'tobbet', 'kepekbol', 'generaly', 'bolcseleteit', 'lementtetted', 'karikazos', 'meg kapod', 'lyo', 'irt']
 
     static playerWords = []
     static counter = 0
 
-    static String description = '''7. András szereti a lyó minőségű dolgokat. András már hetek óta szenved amiatt,
+    static String description = '''7. András szereti a lyo minőségű dolgokat. András már hetek óta szenved amiatt,
 hogy fúj, ez az applikáció milyen tele van helyesírási hibákkal. Nos, ezek szándékosak voltak.
 Visszagörgetve (vagy akár emlékezetből) írd be az eddig talált 10 hibásan irt szót.
 '''
@@ -33,7 +33,7 @@ Visszagörgetve (vagy akár emlékezetből) írd be az eddig talált 10 hibásan
 
         println "${counter} szót találtál meg a 10-ből.\n"
 
-        def success = (counter >= 5)
+        def success = (counter > 5)
         success
     }
 }

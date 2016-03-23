@@ -23,8 +23,8 @@ class BirthdayQuiz {
             XmlMaker.createXml()
         }
 
-        println '''Gratulálok, hogy tuléltél 30 évet az életedből!
-Sokan nem éltek ennél sokkal többett, pl. Mozart, Jézus, Miklós – a Dacia.
+        println '''Gratulálok, hogy tuleltel 30 évet az életedből!
+Sokan nem éltek ennél sokkal tobbet, pl. Mozart, Jézus, Miklós – a Dacia.
 Születésnapod alkalmából egy élményt, egy kincskereső zarándokutat kapsz tőlem, a feleségedtől.
 Az app mellett találsz egy readme file-t és egy BirthdayQuiz foldert.
 A readme-t nem szokták elolvasni az emberek, de te olvasd el mert ha nem használod jól a programot,
@@ -54,7 +54,7 @@ I wouldn’t mess with them if I were you…
         }
 
         def jpgCount = fileCount(ROOT_FOLDER, 'Ex01', '.jpg')
-        printf('\nEddíg %s kép található a mappádban. ', jpgCount)
+        printf('\nEddig %s kép található a mappádban. ', jpgCount)
         if (jpgCount == 30) {
             println "Nahát! Mégis vannak barátaid"
         }

@@ -6,7 +6,7 @@ import static birthdayQuiz.PlayerInput.readLowercase
 import static java.time.Month.MAY
 
 class _09_HomeDeco {
-    static code = 'fészket rakok a zsebedben'
+    static code = 'feszket rakok a zsebedben'
     static String description = '''9. Kérem a kódot a szigetről!
 '''
 
