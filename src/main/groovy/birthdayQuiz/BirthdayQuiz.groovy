@@ -7,9 +7,13 @@ import static birthdayQuiz.ExerciseTerminate.finishExercise
 import static birthdayQuiz.ExerciseTerminate.isExerciseFinished
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.GenerateRandom.pickRandom
+import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.PlayerInput.readLowercase
 import static birthdayQuiz.TextHolder.FAILED_MESSAGE
 import static birthdayQuiz.TextHolder.FINISHED_MESSAGE
+import static birthdayQuiz.UrlHolder.getLoses
+import static birthdayQuiz.UrlHolder.getWins
 
 class BirthdayQuiz {
     static void main(String... args) {
@@ -22,7 +26,7 @@ class BirthdayQuiz {
         println '''Gratulálok, hogy tuléltél 30 évet az életedből!
 Sokan nem éltek ennél sokkal többett, pl. Mozart, Jézus, Miklós – a Dacia.
 Születésnapod alkalmából egy élményt, egy kincskereső zarándokutat kapsz tőlem, a feleségedtől.
-Az app mellett találsz egy readme file-t és egy Birthday Quiz foldert.
+Az app mellett találsz egy readme file-t és egy BirthdayQuiz foldert.
 A readme-t nem szokták elolvasni az emberek, de te olvasd el mert ha nem használod jól a programot,
 akkor fel fog robbanni a PC-d. A programozást Alpár végezte Lőrinc felügyeletével.
 I wouldn’t mess with them if I were you…
@@ -32,13 +36,19 @@ I wouldn’t mess with them if I were you…
         for (ex in ExerciseRegistry) {
             if (isExerciseAllowed(ex)) {
                 println ex.description
-                if (isExerciseFinished(ex))
+                if (isExerciseFinished(ex)) {
                     println FINISHED_MESSAGE
+                }
                 else {
-                    if (ex.run())
+                    if (ex.run()) {
+                        openUrl ex.link
+                        openUrl pickRandom(wins)
+
                         finishExercise(ex)
-                    else
+                    } else {
                         println FAILED_MESSAGE
+                        openUrl pickRandom(loses)
+                    }
                 }
             }
         }

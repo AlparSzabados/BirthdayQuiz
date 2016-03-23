@@ -32,7 +32,7 @@ class ExerciseTerminate {
         
         config.'**'.each {
             if (it.name() == ex.toString())
-                it.replaceBody FINISHED
+                it.replaceBody(FINISHED)
         }
         CONFIG.text = serialize(config)
     }

@@ -2,21 +2,27 @@ package birthdayQuiz.exercises
 
 import birthdayQuiz.PlayerInput
 
+import java.time.MonthDay
+
 import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
-import static birthdayQuiz.UrlHolder.*
+import static birthdayQuiz.UrlHolder.getLoses
+import static java.time.Month.APRIL
 
 class _08_Hangman {
     static String description = '''8. Egy tapintatos professzionális férj 3 év alatt már kitalálja hogy hogyan kell szólítsák egymást a feleségével!
 Ha nem, akkor ő lesz az akasztott ember…
 '''
 
+    static start = MonthDay.of(APRIL, 26)
+    static link = 'https://drive.google.com/open?id=0B_z3-GYCanTKYk1nZ2lyckxUcGc'
+
     static Closure<Boolean> run = {
-        def words = ['kincsifincs', 'husbandi & halfszkaj', 'kicsi kaka liliomszal']
+        def words = ['kincsifincs', 'húsbandi & hálfszkáj', 'kicsi kaka liliomszál']
         def wordsRedacted = ['k__________', '___b____ & ________j', '_____ ____ _____m____']
         def playerWordPool = []
 
-        for (j in 0..<wordsRedacted.size()) {
+        for (int j in 0..<wordsRedacted.size()) {
             def lettersTried = []
             def numberOfTries = (words[j].size() + 5)
             def wordRedactedList = wordsRedacted[j].toList()
@@ -45,13 +51,10 @@ Ha nem, akkor ő lesz az akasztott ember…
             }
         }
 
-        if (words == playerWordPool) {
-            openUrl pickRandom(wins)
-            openUrl taskLinks[7]
-            return true
-        } else {
+
+        def success = (words == playerWordPool)
+        if (!success) {
             openUrl pickRandom(loses)
-            false
         }
     }
 

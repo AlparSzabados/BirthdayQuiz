@@ -12,16 +12,4 @@ class UrlHolder {
                     'http://giphy.com/gifs/afv-funny-fail-lol-3ornk64Apg6Ip97m5W',
                     'http://giphy.com/gifs/fail-facepalm-lULDjDOfqVFmg',
                     'http://giphy.com/gifs/fail-futurama-zoidberg-d1tlu8P8b5FkY']
-
-    static taskLinks = ['https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1', // TODO
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1',
-                        'https://www.google.com/?gws_rd=cr,ssl&ei=f1fwVrS5EYLg6ATf54CYCw&fg=1']
 }

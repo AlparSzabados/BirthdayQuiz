@@ -1,7 +1,9 @@
 package birthdayQuiz.exercises
 
+import java.time.MonthDay
+
 import static birthdayQuiz.OpenUrl.openUrl
-import static birthdayQuiz.UrlHolder.getTaskLinks
+import static java.time.Month.APRIL
 
 class _03_Virus {
     static virusTabs = ['http://www.o-bible.com/kjv.html',
@@ -18,12 +20,13 @@ class _03_Virus {
 
     static String description = '3. Ne ess pánikba. Találd meg a következő feladatot. \n'
 
+    static start = MonthDay.of(APRIL, 1)
+    static link = 'https://drive.google.com/open?id=0B_z3-GYCanTKeXNET0c3Q3ByWFk'
+
     static Closure<Boolean> run = {
-        sleep(3000)
-        openUrl taskLinks[2]
         for (tab in virusTabs) {
+            sleep(2000)
             openUrl(tab)
-            sleep(1000)
         }
         true
     }
