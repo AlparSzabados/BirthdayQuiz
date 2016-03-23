@@ -2,21 +2,27 @@ package birthdayQuiz.exercises
 
 import birthdayQuiz.PlayerInput
 
+import java.time.MonthDay
+
 import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
-import static birthdayQuiz.UrlHolder.*
+import static birthdayQuiz.UrlHolder.getLoses
+import static java.time.Month.APRIL
 
 class _08_Hangman {
     static String description = '''8. Egy tapintatos professzionális férj 3 év alatt már kitalálja hogy hogyan kell szólítsák egymást a feleségével!
 Ha nem, akkor ő lesz az akasztott ember…
 '''
 
+    static start = MonthDay.of(APRIL, 26)
+    static link = 'https://drive.google.com/open?id=0B_z3-GYCanTKYk1nZ2lyckxUcGc'
+
     static Closure<Boolean> run = {
         def words = ['kincsifincs', 'husbandi & halfszkaj', 'kicsi kaka liliomszal']
         def wordsRedacted = ['k__________', '___b____ & ________j', '_____ ____ _____m____']
         def playerWordPool = []
 
-        for (j in 0..<wordsRedacted.size()) {
+        for (int j in 0..<wordsRedacted.size()) {
             def lettersTried = []
             def numberOfTries = (words[j].size() + 5)
             def wordRedactedList = wordsRedacted[j].toList()
@@ -27,7 +33,7 @@ Ha nem, akkor ő lesz az akasztott ember…
 
             List<String> container = wordRedactedList
             for (counter in 0..numberOfTries) {
-                println "találatok száma: ${numberOfTries}| eddíg használt betük: ${lettersTried.join(',')}"
+                println "Találatok száma: ${numberOfTries}| eddig használt betük: ${lettersTried.join(',')}"
 
                 def letter = PlayerInput.readLowercase()
                 lettersTried += letter
@@ -45,14 +51,9 @@ Ha nem, akkor ő lesz az akasztott ember…
             }
         }
 
-        if (words == playerWordPool) {
-            openUrl pickRandom(wins)
-            openUrl taskLinks[7]
-            return true
-        } else {
-            openUrl pickRandom(loses)
-            false
-        }
+
+        def success = (words == playerWordPool)
+        success
     }
 
     static checkLetter(String letter, List<String> wordIn, List<String> wordOut) {
