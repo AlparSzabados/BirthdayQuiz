@@ -19,8 +19,10 @@ class _03_Virus {
     static Closure<Boolean> run = {
         sleep(3000)
         openUrl taskLinks[2]
-        for (tab in virusTabs)
+        for (tab in virusTabs) {
             openUrl(tab)
+            sleep(1000)
+        }
         true
     }
 }

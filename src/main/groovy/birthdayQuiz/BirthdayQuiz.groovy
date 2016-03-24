@@ -10,7 +10,6 @@ import static birthdayQuiz.FolderHolder.ROOT_FOLDER
 import static birthdayQuiz.TextHolder.FAILED_MESSAGE
 import static birthdayQuiz.TextHolder.FINISHED_MESSAGE
 
-
 class BirthdayQuiz {
     static void main(String... args) {
         ROOT_FOLDER.mkdir()
@@ -25,7 +24,8 @@ Születésnapod alkalmából egy élményt, egy kincskereső zarándokutat kapsz
 Az app mellett találsz egy readme file-t és egy Birthday Quiz foldert.
 A readme-t nem szokták elolvasni az emberek, de te olvasd el mert ha nem használod jól a programot,
 akkor fel fog robbanni a PC-d. A programozást Alpár végezte Lőrinc felügyeletével.
-I wouldn’t mess with them if I were you… \n'''
+I wouldn’t mess with them if I were you…
+'''
         println '***********************************************************************************************************\n'
 
         for (ex in ExerciseRegistry) {
@@ -42,9 +42,8 @@ I wouldn’t mess with them if I were you… \n'''
             }
         }
 
-        def PICTURE_COUNTER = '\nYou have uploaded %s pictures with your friends. '
         def jpgCount = fileCount(ROOT_FOLDER, 'Ex01', '.jpg')
-        printf(PICTURE_COUNTER, jpgCount)
+        printf('\nYou have uploaded %s pictures with your friends. ', jpgCount) // TODO everything should be in the same language: either hungarian or english :)
 
         if (jpgCount == 30) {
             println "YYYYEEEEEY, you have friends!"
