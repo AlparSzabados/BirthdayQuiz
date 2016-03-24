@@ -1,7 +1,9 @@
 package birthdayQuiz.exercises
 
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
-import static birthdayQuiz.UrlHolder.getTaskLinks
+import static birthdayQuiz.UrlHolder.getWins
+import static birthdayQuiz.UrlHolder.taskLinks
 
 class _01_MeetFriends {
 
@@ -15,6 +17,7 @@ Minderre van 49 napod. A képekböl 5 darab a konzi területén kell legyen
         sleep(30000)
         println 'Addigis itt van ez a link'
         openUrl taskLinks[0]
+        openUrl pickRandom(wins)
         true
     }
 }
