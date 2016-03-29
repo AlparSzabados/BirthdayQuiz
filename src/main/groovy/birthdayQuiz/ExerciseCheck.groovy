@@ -2,10 +2,11 @@ package birthdayQuiz
 
 import birthdayQuiz.exercises.ExerciseRegistry
 
+import static birthdayQuiz.ExerciseTerminate.*
 import static birthdayQuiz.FolderHolder.CONFIG
 import static birthdayQuiz.XmlMaker.Status.FINISHED
 import static birthdayQuiz.XmlReader.EXERCISE_DONE
-import static birthdayQuiz.XmlReader.config
+import static groovy.xml.XmlUtil.*
 
 class ExerciseCheck {
     static isExerciseFinished(ExerciseRegistry ex) {
@@ -13,7 +14,13 @@ class ExerciseCheck {
     }
 
     static finishExercise(ExerciseRegistry ex) {
-        EXERCISE_DONE[ex] = FINISHED
-        config.writeTo(CONFIG)
+        def config = new XmlSlurper().parseText(CONFIG.text)
+
+        EXERCISE_TERMINATE.each { key, value ->
+            if (key == (ex))
+                config.'**'.findAll { if (it.name() == value) it.replaceBody FINISHED }
+        }
+
+        CONFIG.text = serialize(config)
     }
 }
