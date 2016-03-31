@@ -3,20 +3,20 @@ package birthdayQuiz
 import birthdayQuiz.exercises.ExerciseRegistry
 
 import static birthdayQuiz.DateCheck.isExerciseAllowed
-import static birthdayQuiz.ExerciseCheck.finishExercise
-import static birthdayQuiz.ExerciseCheck.isExerciseFinished
+import static birthdayQuiz.ExerciseTerminate.finishExercise
+import static birthdayQuiz.ExerciseTerminate.isExerciseFinished
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
 import static birthdayQuiz.TextHolder.FAILED_MESSAGE
 import static birthdayQuiz.TextHolder.FINISHED_MESSAGE
-import static birthdayQuiz.XmlMaker.createXml
+
 
 class BirthdayQuiz {
     static void main(String... args) {
         ROOT_FOLDER.mkdir()
 
         if (fileCount(ROOT_FOLDER, '', '.xml') == 0) {
-            createXml()
+            XmlMaker.createXml()
         }
 
         println '''Gratulálok, hogy tuléltél 30 évet az életedből!
@@ -43,7 +43,7 @@ I wouldn’t mess with them if I were you… \n'''
         }
 
         def PICTURE_COUNTER = '\nYou have uploaded %s pictures with your friends. '
-        def jpgCount = fileCount(ROOT_FOLDER, '', '.jpg')
+        def jpgCount = fileCount(ROOT_FOLDER, 'Ex01', '.jpg')
         printf(PICTURE_COUNTER, jpgCount)
 
         if (jpgCount == 30) {
