@@ -14,17 +14,17 @@ class XmlMaker {
         def sw = new StringWriter()
         new MarkupBuilder(sw).birthdayQuiz() {
             exercises() {
-                exercise01(NOT_FINISHED)
-                exercise02(NOT_FINISHED)
-                exercise03(NOT_FINISHED)
-                exercise04(NOT_FINISHED)
-                exercise05(NOT_FINISHED)
-                exercise06(NOT_FINISHED)
-                exercise07(NOT_FINISHED)
-                exercise08(NOT_FINISHED)
-                exercise09(NOT_FINISHED)
-                exercise10(NOT_FINISHED)
-                exercise11(NOT_FINISHED)
+                _01(NOT_FINISHED)
+                _02(NOT_FINISHED)
+                _03(NOT_FINISHED)
+                _04(NOT_FINISHED)
+                _05(NOT_FINISHED)
+                _06(NOT_FINISHED)
+                _07(NOT_FINISHED)
+                _08(NOT_FINISHED)
+                _09(NOT_FINISHED)
+                _10(NOT_FINISHED)
+                _11(NOT_FINISHED)
             }
         }
         sw.write()
