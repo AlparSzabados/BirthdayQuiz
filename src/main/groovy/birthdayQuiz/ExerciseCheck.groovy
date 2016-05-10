@@ -2,11 +2,11 @@ package birthdayQuiz
 
 import birthdayQuiz.exercises.ExerciseRegistry
 
-import static birthdayQuiz.ExerciseTerminate.*
+import static birthdayQuiz.ExerciseTerminate.getEXERCISE_TERMINATE
 import static birthdayQuiz.FolderHolder.CONFIG
 import static birthdayQuiz.XmlMaker.Status.FINISHED
 import static birthdayQuiz.XmlReader.EXERCISE_DONE
-import static groovy.xml.XmlUtil.*
+import static groovy.xml.XmlUtil.serialize
 
 class ExerciseCheck {
     static isExerciseFinished(ExerciseRegistry ex) {
