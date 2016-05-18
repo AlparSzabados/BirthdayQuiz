@@ -8,28 +8,32 @@ import static birthdayQuiz.exercises.ExerciseRegistry.*
 import static groovy.xml.XmlUtil.serialize
 
 class ExerciseTerminate {
-    static final CONFIG = new XmlSlurper().parseText(CONFIG.text)
-
-    private static final EXERCISES = CONFIG.exercises
-    protected static final EXERCISE_DONE = [(_01): EXERCISES._01,
-                                            (_02): EXERCISES._02,
-                                            (_03): EXERCISES._03,
-                                            (_04): EXERCISES._04,
-                                            (_05): EXERCISES._05,
-                                            (_06): EXERCISES._06,
-                                            (_07): EXERCISES._07,
-                                            (_08): EXERCISES._08,
-                                            (_09): EXERCISES._09,
-                                            (_10): EXERCISES._10,
-                                            (_11): EXERCISES._11]
 
     static isExerciseFinished(ExerciseRegistry ex) {
         EXERCISE_DONE[ex] == FINISHED
     }
 
+    static config = new XmlSlurper().parseText(CONFIG.text)
+
+    private static exercises = config.exercises
+    protected static final EXERCISE_DONE = [(_01): exercises._01,
+                                            (_02): exercises._02,
+                                            (_03): exercises._03,
+                                            (_04): exercises._04,
+                                            (_05): exercises._05,
+                                            (_06): exercises._06,
+                                            (_07): exercises._07,
+                                            (_08): exercises._08,
+                                            (_09): exercises._09,
+                                            (_10): exercises._10,
+                                            (_11): exercises._11]
+
     static finishExercise(ExerciseRegistry ex) {
+        config
+        EXERCISE_DONE.each {
+            config.'**'.findAll { if (it.name() == ex.toString()) it.replaceBody FINISHED }
+        }
+        CONFIG.text = serialize(config)
         EXERCISE_DONE[ex] = FINISHED
-        CONFIG."$ex".replaceBody(FINISHED)
-        CONFIG.text = serialize(CONFIG)
     }
 }
