@@ -26,7 +26,7 @@ A readme-t nem szokták elolvasni az emberek, de te olvasd el mert ha nem haszn�
 akkor fel fog robbanni a PC-d. A programozást Alpár végezte Lőrinc felügyeletével.
 I wouldn’t mess with them if I were you…
 '''
-        println '***********************************************************************************************************\n'
+        println '*****************************************************************************************************\n'
 
         for (ex in ExerciseRegistry) {
             if (isExerciseAllowed(ex)) {
@@ -43,10 +43,9 @@ I wouldn’t mess with them if I were you…
         }
 
         def jpgCount = fileCount(ROOT_FOLDER, 'Ex01', '.jpg')
-        printf('\nYou have uploaded %s pictures with your friends. ', jpgCount) // TODO everything should be in the same language: either hungarian or english :)
-
+        printf('\nEddíg %s kép található a mappádban. ', jpgCount)
         if (jpgCount == 30) {
-            println "YYYYEEEEEY, you have friends!"
+            println "Nahát! Mégis vannak barátaid"
         }
     }
 }

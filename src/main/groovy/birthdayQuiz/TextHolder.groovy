@@ -1,6 +1,6 @@
 package birthdayQuiz
 
 class TextHolder {
-    static final FINISHED_MESSAGE = 'Check!\n'
-    static final FAILED_MESSAGE = 'Try again!\n'
+    static final FINISHED_MESSAGE = 'Kipipálva!\n'
+    static final FAILED_MESSAGE = 'Ez nem sikerült...\n'
 }
