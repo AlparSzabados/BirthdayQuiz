@@ -1,7 +1,10 @@
 package birthdayQuiz.exercises
 
+import birthdayQuiz.PlayerInput
+
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.UrlHolder.*
 
@@ -11,13 +14,15 @@ akkor megtudod hova kell menned tovább. Előre haladunk az időben vagy hátra?
 ''' // TODO mai dátum fog változni ...
 
     static Closure<Boolean> run = {
+        println "Nyomj egy Enter-t amikor készen állsz."
+        PlayerInput.readLowercase()
         def success = (fileCount(ROOT_FOLDER, 'Ex05', '.jpg') == 1)
         if (success) {
-            openUrl wins[0]
+            openUrl pickRandom(wins)
             openUrl taskLinks[4]
         } else {
-            sleep(10000)
-            openUrl loses[0]
+            println 'Nem töltötted fel a kért dokumentumot.'
+            openUrl pickRandom(loses)
         }
         success
     }

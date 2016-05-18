@@ -2,7 +2,9 @@ package birthdayQuiz.exercises
 
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
+import static birthdayQuiz.PlayerInput.readLowercase
 import static birthdayQuiz.UrlHolder.*
 
 class _04_HiddenObjects {
@@ -11,14 +13,15 @@ Mentsd el az állatok bőlcseleteit tartalmazó docx-et a BirthdayQuiz folderbe 
 '''
 
     static Closure<Boolean> run = {
+        println "Nyomj egy Enter-t amikor kész állsz."
+        readLowercase()
         def success = (fileCount(ROOT_FOLDER, 'Ex04', '.docx') == 1)
         if (success) {
-            openUrl wins[0]
+            openUrl pickRandom(wins)
             openUrl taskLinks[3]
         } else {
-            sleep(10000)
-            println 'No files found, have a GIF-t.' // TODO
-            openUrl loses[0]
+            println 'Nem töltötted fel a kért dokumentumot.'
+            openUrl pickRandom(loses)
         }
         success
     }

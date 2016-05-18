@@ -13,9 +13,11 @@ class _03_Virus {
                         'http://www.detoatepentrutoti.ro/anunturi/Romania/Locuri-de-munca/cereri-si-oferte/munca-domiciliu/',
                         'http://www.mahar.ro/categorie/munca-la-domiciliu/',
                         'http://www.romedic.ro/marirea-penisului-0P14710',
-                        'http://www.youjizz.com']
+                        'http://www.youjizz.com',
+                        'http://www.elle.ro/beauty/cum-sa-scapi-de-celulita-metode-care-functioneaza-garantat-406606']
 
     static String description = '3. Ne ess pánikba. Találd meg a következő feladatot. \n'
+
     static Closure<Boolean> run = {
         sleep(3000)
         openUrl taskLinks[2]

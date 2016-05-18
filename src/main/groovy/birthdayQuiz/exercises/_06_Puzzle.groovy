@@ -1,7 +1,10 @@
 package birthdayQuiz.exercises
 
+import birthdayQuiz.PlayerInput
+
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.UrlHolder.*
 
@@ -11,14 +14,15 @@ Tedd, amit látni fogsz. De előbb a kódot docx-ben mentsd le a Birtyday Quiz F
 '''
 
     static Closure<Boolean> run = {
+        println "Nyomj egy Enter-t amikor készen állsz."
+        PlayerInput.readLowercase()
         def success = (fileCount(ROOT_FOLDER, 'Ex06', '.docx') == 1)
         if (success) {
-            openUrl wins[0]
+            openUrl pickRandom(wins)
             openUrl taskLinks[5]
         } else {
-            sleep(10000)
-            println 'No files found, have a GIF-t.' // TODO gift?
-            openUrl loses[0]
+            println 'Nem töltötted fel a kért dokumentumot.'
+            openUrl pickRandom(loses)
         }
         success
     }

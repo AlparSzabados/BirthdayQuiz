@@ -2,6 +2,7 @@ package birthdayQuiz.exercises
 
 import birthdayQuiz.PlayerInput
 
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.UrlHolder.*
 
@@ -17,16 +18,16 @@ Ha nem, akkor ő lesz az akasztott ember…
 
         for (j in 0..<wordsRedacted.size()) {
             def lettersTried = []
-            def numberOfTries = (words[j].size() + 10)
+            def numberOfTries = (words[j].size() + 5)
             def wordRedactedList = wordsRedacted[j].toList()
             def wordList = words[j].toList()
 
-            println "you have ${numberOfTries} tries.\n"
+            println "${numberOfTries} találat áll a rendelkezésedre.\n"
             println "${wordRedactedList} \n"
 
             List<String> container = wordRedactedList
             for (counter in 0..numberOfTries) {
-                println "tries left: ${numberOfTries}| letters tried: ${lettersTried.join(',')}"
+                println "találatok száma: ${numberOfTries}| eddíg használt betük: ${lettersTried.join(',')}"
 
                 def letter = PlayerInput.readLowercase()
                 lettersTried += letter
@@ -37,7 +38,7 @@ Ha nem, akkor ő lesz az akasztott ember…
                 numberOfTries -= 1
 
                 if (container == wordList) {
-                    println 'Check!\n'
+                    println 'Talált!\n'
                     playerWordPool += container.join('')
                     break
                 }
@@ -45,11 +46,11 @@ Ha nem, akkor ő lesz az akasztott ember…
         }
 
         if (words == playerWordPool) {
-            openUrl wins[0]
+            openUrl pickRandom(wins)
             openUrl taskLinks[7]
             return true
         } else {
-            openUrl loses[0]
+            openUrl pickRandom(loses)
             false
         }
     }

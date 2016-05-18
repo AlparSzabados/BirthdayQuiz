@@ -1,5 +1,7 @@
 package birthdayQuiz.exercises
 
+import birthdayQuiz.PlayerInput
+
 import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.UrlHolder.getWins
@@ -15,7 +17,8 @@ Minderre van 49 napod. A képekböl 5 darab a konzi területén kell legyen
 '''
 
     static Closure<Boolean> run = {
-        sleep(30000)
+        println "Nyomj egy Enter-t amikor készen állsz."
+        PlayerInput.readLowercase()
         println 'Addigis itt van ez a link'
         openUrl taskLinks[0]
         openUrl pickRandom(wins)

@@ -2,7 +2,9 @@ package birthdayQuiz.exercises
 
 import static birthdayQuiz.FileCounter.fileCount
 import static birthdayQuiz.FolderHolder.ROOT_FOLDER
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
+import static birthdayQuiz.PlayerInput.*
 import static birthdayQuiz.UrlHolder.*
 
 class _10_Poster {
@@ -13,14 +15,15 @@ Ma van a szüleim 16. házassági évfordulója is. Köszöntsd őket! S juttasd
 '''
 
     static Closure<Boolean> run = {
+        println "Nyomj egy Enter-t amikor készen állsz."
+        readLowercase()
         def success = (fileCount(ROOT_FOLDER, 'Ex10', '.jpg') == 1)
         if (success) {
-            openUrl wins[0]
-            openUrl taskLinks[0]
+            openUrl pickRandom(wins)
+            openUrl taskLinks[9]
         } else {
-            sleep(15000)
-            println 'No files found, have a GIF-t.'
-            openUrl loses[0]
+            println 'Nem töltötted fel a kért dokumentumot.'
+            openUrl pickRandom(loses)
         }
         success
     }

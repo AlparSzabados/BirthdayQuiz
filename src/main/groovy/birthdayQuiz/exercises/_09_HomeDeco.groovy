@@ -1,5 +1,6 @@
 package birthdayQuiz.exercises
 
+import static birthdayQuiz.GenerateRandom.pickRandom
 import static birthdayQuiz.OpenUrl.openUrl
 import static birthdayQuiz.PlayerInput.readLowercase
 import static birthdayQuiz.UrlHolder.*
@@ -12,10 +13,11 @@ class _09_HomeDeco {
     static Closure<Boolean> run = {
         def success = (readLowercase() == code.toLowerCase())
         if (success) {
-            openUrl wins[0]
+            openUrl pickRandom(wins)
             openUrl taskLinks[8]
         } else {
-            openUrl loses[0]
+            println 'Rossz kód.'
+            openUrl pickRandom(loses)
         }
         success
     }
